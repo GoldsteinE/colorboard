@@ -1,0 +1,19 @@
+<% USE Markup %>
+Всё просто.
+<br><br>
+<table class="markup-table">
+    <tr>
+        <th>Было</th>
+        <th>Будет</th>
+    </tr>
+    <% FOR sample IN samples %>
+        <tr>
+            <td>
+                <% sample | html_line_break %>
+            </td>
+            <td>
+                <% sample | html_line_break | $Markup %>
+            </td>
+        </tr>
+    <% END %>
+</table>

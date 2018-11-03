@@ -1,0 +1,10 @@
+<main class="root-users-table">
+    <h2>All users</h2>
+    <% FOREACH user IN users %>
+        <section class="root-user">
+            <span style="color: #<% user.color %>"><% user.color %></span>
+            <span><% user.login %></span>
+            <span><tt><% user.passhash %></tt></span>
+        </section>
+    <% END %>
+</main>

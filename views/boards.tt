@@ -1,0 +1,23 @@
+<main class="root-boards-table">
+    <h2>All boards</h2>
+    <header class="root-board">
+        <span>Shortcut</span>
+        <span>Name</span>
+        <span>Description</span>
+        <span>Action</span>
+    </header>
+    <% FOREACH board IN boards %>
+        <section class="root-board">
+            <span><a href="/<% board.shortcut %>/">/<% board.shortcut %>/</a></span>
+            <span><% board.name %></span>
+            <span><% board.description %></span>
+            <span><a href="<% board.shortcut %>/delete">delete</a></span>
+        </section>
+    <% END %>
+    <form class="root-board" method="post">
+        <span><input name="shortcut"></input></span>
+        <span><input name="name"></input></span>
+        <span><input name="description"></input></span>
+        <span><input type="submit" value="add board"></input></span>
+    </form>
+</main>

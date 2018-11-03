@@ -1,0 +1,16 @@
+<script src="<% request.uri_base %>/javascripts/badcolor.js"></script>
+<script src="<% request.uri_base %>/javascripts/jquery.js"></script>
+<script src="<% request.uri_base %>/javascripts/spectrum.js"></script>
+
+<form class="login-form" method="post">
+    <span>register, please</span>
+    <input name="username" placeholder="username"></input>
+    <input name="password" type="password" placeholder="password"></input>
+    <span>
+        <label id="colorpicker-label">
+            pick your color:
+        </label>
+        <input name="color" type="color" id="colorpicker" value="<% initialColor %>"></input>
+    </span>
+    <input type="submit" value="register" id="registerbutton"></input>
+</form>

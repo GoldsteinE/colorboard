@@ -1,0 +1,84 @@
+<script src="<% request.uri_base %>/javascripts/colorcolorboard.js"></script>
+
+<aside>
+    <h2>Правила игры</h2>
+    <p>
+        <strong id="colorboardword">colorboard</strong> — это полуанонимный форум.
+    </p>
+    <p>
+        <em>Полуанонимный</em> значит, что пользователи отличаются друг от друга только своим цветом.
+        Запомнить кого-то будет сложно, но отличить людей друг от друга в рамках одного диалога — легко.
+    </p>
+    <p>
+        Каждый выбирает себе цвет сам, при регистрации. Чёрный цвет занят <em>админом</em>.
+        Нельзя выбирать цвета, слишком похожие на чёрный или на белый.
+    </p>
+    <p>
+        Выбранный цвет может немного измениться при регистрации. Это сделано, чтобы не появлялось пользователей с очень похожими цветами.
+    </p>
+    <p>
+        Общение на форуме происходит на нескольких <em>досках</em>. Основная доска — <a href="/b/">/bред</a>.
+        Попросить админа о создании новой можно на доске <a href="/adm/">/админ</a>.
+        О синтаксисе местной разметки можно узнать на странице <a href="/markup/">/разметка</a>.
+    </p>
+    <p>
+        Не надо отказываться от своей анонимности. Использование ников в сообщениях не одобряется и может караться.
+    </p>
+    <p>
+        На каждой доске видно последние 20 сообщений. Остальные сгинули в бездну.
+    </p>
+    <p>
+        Вы хотите API? Их есть у меня. Допишите <code>.json</code> к имени любой доски, чтобы получить машиночитаемые данные.
+        Например: <a href="/b.json">/b.json</a>. Чтобы получить список всех досок, можно запросить
+        <a href="/_boards.json">/_boards.json</a>.
+    </p>
+</aside>
+<main class="boards">
+    <% FOREACH board IN boards %>
+        <section class="board">
+            <span class="board-name">
+                <a href="/<% board.shortcut %>/">/<% board.name %></a>
+            </span>
+            <span class="board-description">
+                <% board.description %>
+            </span>
+        </section>
+    <% END %>
+    <% IF NOT session.user %>
+        <section class="board">
+            <span class="board-name">
+                <a href="/register/">/создать аккаунт</a>
+            </span>
+            <span class="board-description">
+                и выбрать свой цвет
+            </span>
+        </section>
+        <section class="board">
+            <span class="board-name">
+                <a href="/login/">/войти</a>
+            </span>
+            <span class="board-description">
+                чтобы говорить
+            </span>
+        </section>
+    <% ELSE %>
+    <section class="board">
+        <span class="board-name">
+            <a href="/logout/">/выйти из аккуанта</a>
+        </span>
+        <span class="board-description">
+            но потом вернуться
+        </span>
+    </section>
+    <% END %>
+    <% IF session.user.login == "admin" %>
+        <section class="board">
+            <span class="board-name">
+                <a href="/root/">/администрировать</a>
+            </span>
+            <span class="board-description">
+                бывает сложно
+            </span>
+        </section>
+    <% END %>
+</main>

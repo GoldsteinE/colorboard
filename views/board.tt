@@ -1,0 +1,19 @@
+<% USE Markup %>
+<script src="<% request.uri_base %>/javascripts/newpostscroller.js"></script>
+<script src="<% request.uri_base %>/javascripts/spectrum.js %>"></script>
+
+<main class="board">
+    <% FOREACH post IN posts %>
+        <section class="post" style="border-color: #<% post.author.color %>">
+            <% post.text | $Markup | html_line_break %>
+        </section>
+    <% END %>
+    <% IF session.user %>
+        <section class="new-post post" id="new-post" style="border-color: #<% session.user.color %>">
+            <form class="new-post-form" method="post">
+                <textarea name="message" class="new-post-text" id="new-post-text"></textarea>
+                <input class="new-post-submit" type="submit" value="сказать"></input>
+            </form>
+        </section>
+    <% END %>
+</main>

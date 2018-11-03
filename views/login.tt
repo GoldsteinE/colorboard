@@ -1,0 +1,6 @@
+<form class="login-form" method="post">
+    <span>log in, please</span>
+    <input name="username" placeholder="username"></input>
+    <input name="password" type="password" placeholder="password"></input>
+    <input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;" tabindex="-1">
+</form>

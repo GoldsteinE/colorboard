@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="<% settings.charset %>">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>colorboard : <% title %></title>
+  <link href="https://necolas.github.io/normalize.css/8.0.0/normalize.css" rel="stylesheet">
+  <link rel="stylesheet" href="<% request.uri_base %>/css/style.css">
+  <link rel="stylesheet" href="<% request.uri_base %>/css/root.css">
+  <link rel="stylesheet" href="<% request.uri_base %>/css/spectrum.css">
+
+  <!-- Favicon. Fuck web industry. -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="manifest" href="/images/site.webmanifest">
+  <link rel="shortcut icon" href="/images/favicon.ico">
+  <meta name="msapplication-TileColor" content="#00aba9">
+  <meta name="msapplication-config" content="/images/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+</head>
+<body class="<% pageclass %>">
+    <header class="title-line">
+        <a href="/" class="main-title">
+        	<span class="c">c</span>olorboard
+        </a>
+        <span class="board-location">
+        	/<% title %>
+            <% IF description %>
+                – <% description %>
+            <% END %>
+        </span>
+        <% UNLESS session.user OR pageclass == "index" %>
+            <div class="aside-login">
+                <a href="/login/?return=<% request.path %>">/войти</a><br>
+                <a href="/register/?return=<% request.path %>">/создать аккуант</a>
+            </div>
+        <% END %>
+    </header>
+    <% IF error %>
+        <div class="error">
+            <% error %>
+        </div>
+    <% END %>
+<% content %>
+</body>
+</html>

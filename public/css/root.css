@@ -1,0 +1,31 @@
+.root-users-table {
+    display: table;
+}
+
+.root-user {
+    display: table-row;
+}
+
+.root-user > span {
+    display: table-cell;
+    padding: 0.5em;
+    border: 1px solid black;
+}
+
+.root-boards-table {
+    display: table;
+}
+
+.root-board {
+    display: table-row;
+}
+
+header.root-board {
+    font-weight: bold;
+}
+
+.root-board > span {
+    display: table-cell;
+    padding: 0.5em;
+    border: 1px solid black;
+}

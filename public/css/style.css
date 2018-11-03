@@ -1,0 +1,198 @@
+body {
+	font-family: sans-serif;
+	padding: 1em;
+}
+
+a {
+	text-decoration: none;
+}
+
+.error {
+    width: 100%;
+    text-align: center;
+    color: #ff0000;
+    font-size: 1.5em;
+}
+
+.title-line {
+	margin-bottom: 1em;
+}
+
+.main-title {
+	margin: 0;
+	font-size: 2em;
+	display: inline-block;
+	text-decoration: none;
+	color: black;
+	transition: color 0.2s;
+}
+
+.main-title > .c {
+	color: purple;
+	transition: color 0.2s;
+}
+
+.main-title:hover {
+	color: purple;
+}
+
+.main-title:hover > .c {
+	color: black;
+}
+
+.board-location {
+	font-size: 1.5em;
+}
+
+.aside-login {
+	float: right;
+}
+
+a {
+	color: #1115af;
+}
+
+.post {
+	padding: 1em;
+	border-width: 2px;
+	border-style: solid;
+	border-radius: 5px;
+	margin-bottom: 1em;
+	font-size: 1.3em;
+}
+
+.new-post-form {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	height: auto;
+}
+
+.new-post-text, .new-post-submit {
+	display: inline-block;
+	min-height: 2em;
+	margin-top: 0;
+}
+
+.new-post-text {
+	resize: none;
+	width: 90%;
+	border: none;
+	box-sizing: border-box;
+}
+
+.new-post-submit {
+	background-color: white;
+	border: none;
+	outline: none;
+}
+
+.new-post-submit:hover {
+	transition: color 0.2s;
+	color: purple;
+}
+
+.login-form {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: block;
+    height: 15em;
+}
+
+.login-form > input, .login-form > span {
+    margin: 1em auto;
+    display: block;
+    font-size: 1.5em;
+}
+
+.login-form input {
+    outline: none;
+    border: none;
+    background: transparent;
+    border-bottom: 2px solid black;
+}
+
+.login-form input[type=color] {
+    border: none;
+}
+
+.login-form input[type=submit] {
+    border-top: 2px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 2px solid black;
+    line-height: 150%;
+}
+
+.login-form input[name=color] {
+    vertical-align: text-bottom;
+}
+
+.login-form > span, .login-form > label {
+    text-align: center;
+}
+
+body.index header {
+	float: left;
+}
+
+body.index aside {
+	float: right;
+	width: 60%;
+}
+
+body.index aside h2 {
+	margin-top: 0.5em;
+}
+
+body.index main {
+	width: 25%;
+}
+
+section.board {
+	font-size: 1.2em;
+	display: block;
+	margin-bottom: 0.1em;
+	display: table;
+}
+
+section.board::before {
+	content: "→";
+	margin-right: 0.3em;
+}
+
+section.board > span {
+	display: table-cell;
+	padding: 0.1em;
+	padding-right: 1em;
+	min-width: 10em;
+}
+
+.spoiler {
+	color: transparent;
+	text-shadow: 0 0 8px rgba(0, 0, 0, 1);
+	transition: text-shadow 0.3s, color 0.3s;
+}
+
+.spoiler:hover {
+	color: black;
+	text-shadow: none;
+}
+
+.markup-table {
+	border-collapse: collapse;
+}
+
+.markup-table th {
+	text-align: left;
+}
+
+.markup-table td, .markup-table th {
+	padding: 0.2em;
+	min-width: 10em;
+}
