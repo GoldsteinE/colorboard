@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS "User";
+DROP TABLE IF EXISTS "User" CASCADE;
 CREATE TABLE IF NOT EXISTS "User"(
   "id" SERIAL NOT NULL,
   "color" text NOT NULL,
@@ -8,14 +8,14 @@ CREATE TABLE IF NOT EXISTS "User"(
   UNIQUE ("color"),
   UNIQUE ("login")
 );
-DROP TABLE IF EXISTS "Session";
+DROP TABLE IF EXISTS "Session" CASCADE;
 CREATE TABLE IF NOT EXISTS "Session"(
   "session_id" text NOT NULL,
   "session_data" text NOT NULL,
   UNIQUE ("session_id"),
   PRIMARY KEY ("session_id")
 );
-DROP TABLE IF EXISTS "Post";
+DROP TABLE IF EXISTS "Post" CASCADE;
 CREATE TABLE IF NOT EXISTS "Post"(
   "id" SERIAL NOT NULL,
   "board_id" int NOT NULL,
@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS "Post"(
   FOREIGN KEY ("author_id")
   REFERENCES "User" ("id") ON DELETE CASCADE
 );
-DROP TABLE IF EXISTS "Board";
+DROP TABLE IF EXISTS "Board" CASCADE;
 CREATE TABLE IF NOT EXISTS "Board"(
   "id" SERIAL NOT NULL,
   "name" text NOT NULL,
